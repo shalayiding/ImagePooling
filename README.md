@@ -37,7 +37,7 @@ First we have to divide image to the n matrix size of the matrix should be (m*m)
 # Orginal Image:![Orginal Image](https://github.com/shalayiding/ImagePooling/blob/master/Lenna_test.png)
 ## 1.Max Pooling 👍 
 In max pooling we picking up the max number from the Pooling box in this case it will be 4 * 4 pixels matrix,forexample we are picking up the value 163 from 1 channle.
-![Max Poolling](https://github.com/shalayiding/ImagePooling/blob/master/result_img/max_value.png)
+![Max Poolling](https://github.com/shalayiding/ImagePooling/blob/master/wiki%20source/max_explian.PNG)
 
     def Matrix_Max(R_matrix, G_matrix, B_matrix):
         RGB_matrix = [0, 0, 0]
@@ -60,7 +60,7 @@ In max pooling we picking up the max number from the Pooling box in this case it
         return RGB_matrix
 
 # Result : 
-![Max Pooling Result](https://github.com/shalayiding/ImagePooling/blob/master/max_value.png)
+![Max Pooling Result](https://github.com/shalayiding/ImagePooling/blob/master/result_img/max_value.png)
 
 ## 2.Average Poolling 👍 
 In the Average poolling we are adding all the pixels and divide by the matrix size.
