@@ -1,5 +1,4 @@
 # ImagePooling
-Welcome to the ImagePooling wiki!
 # Different type of pooling methods
 ### Basic setup 
 First we have to divide image to the n matrix size of the matrix should be (m*m) we are storing all the value to the R_matrix , G_matrix, B_matrix since we have 3 channle and we are sending this matrix to the different function to process the matrix.
