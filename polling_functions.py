@@ -3,6 +3,8 @@ import numpy as np
 from numpy import linalg as LA
 
 
+
+
 def Polling(img, width, height, Polling_w, Polling_h , P_mode):
     for h in range(0, height,Polling_h):
         for w in range(0,width,Polling_w):
@@ -21,6 +23,8 @@ def Polling(img, width, height, Polling_w, Polling_h , P_mode):
                 if P_mode == 'max':
                     temp = Matrix_Max(R_matrix, G_matrix, B_matrix)
 
+                if P_mode == 'egien':
+                    temp = Matrix_Egien(R_matrix, G_matrix, B_matrix)
                 for ph in range(0,Polling_h):
                     for pw in range(0, Polling_w):
                         img[pw+w,ph+h] = temp
@@ -29,8 +33,14 @@ def Polling(img, width, height, Polling_w, Polling_h , P_mode):
     return img
 
 def Matrix_Egien(R_matrix, G_matrix, B_matrix):
-
-    pass
+    R_e_vals, R_e_vecs = LA.eig(R_matrix)
+    G_e_vals, G_e_vecs = LA.eig(G_matrix)
+    B_e_vals, B_e_vecs = LA.eig(B_matrix)
+    RGB_matrix = [0,0,0]
+    RGB_matrix[0] = round(max(R_e_vals))
+    RGB_matrix[1] = round(max(G_e_vals))
+    RGB_matrix[2] = round(max(B_e_vals))
+    return RGB_matrix
 
 
 def Matrix_Max(R_matrix, G_matrix, B_matrix):
