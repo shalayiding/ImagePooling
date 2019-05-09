@@ -5,7 +5,7 @@ from numpy import linalg as LA
 
 
 
-def Polling(img, width, height, Polling_w, Polling_h , P_mode):
+def Poolling(img, width, height, Polling_w, Polling_h , P_mode):
     for h in range(0, height,Polling_h):
         for w in range(0,width,Polling_w):
             if img.size - (h*w) > (Polling_w*Polling_h):
@@ -22,9 +22,12 @@ def Polling(img, width, height, Polling_w, Polling_h , P_mode):
                         B_matrix[ph].append(img[w+pw,h+ph][2])
                 if P_mode == 'max':
                     temp = Matrix_Max(R_matrix, G_matrix, B_matrix)
+                if P_mode == 'eigen':
+                    temp = Matrix_Eigen(R_matrix, G_matrix, B_matrix)
+                if P_mode == 'ave':
+                    temp = Matrix_Average(R_matrix, G_matrix, B_matrix)
 
-                if P_mode == 'egien':
-                    temp = Matrix_Egien(R_matrix, G_matrix, B_matrix)
+
                 for ph in range(0,Polling_h):
                     for pw in range(0, Polling_w):
                         img[pw+w,ph+h] = temp
@@ -32,7 +35,7 @@ def Polling(img, width, height, Polling_w, Polling_h , P_mode):
                 pass
     return img
 
-def Matrix_Egien(R_matrix, G_matrix, B_matrix):
+def Matrix_Eigen(R_matrix, G_matrix, B_matrix):
     R_e_vals, R_e_vecs = LA.eig(R_matrix)
     G_e_vals, G_e_vecs = LA.eig(G_matrix)
     B_e_vals, B_e_vecs = LA.eig(B_matrix)
@@ -45,9 +48,9 @@ def Matrix_Egien(R_matrix, G_matrix, B_matrix):
 
 def Matrix_Max(R_matrix, G_matrix, B_matrix):
     RGB_matrix = [0, 0, 0]
-    RGB_matrix[0] = max(R_matrix[0]);
-    RGB_matrix[1] = max(G_matrix[0]);
-    RGB_matrix[2] = max(B_matrix[0]);
+    RGB_matrix[0] = max(R_matrix[0])
+    RGB_matrix[1] = max(G_matrix[0])
+    RGB_matrix[2] = max(B_matrix[0])
 
     for value in R_matrix:
         if max(value) >  RGB_matrix[0]:
@@ -65,4 +68,10 @@ def Matrix_Max(R_matrix, G_matrix, B_matrix):
 
 
 def Matrix_Average(R_matrix, G_matrix, B_matrix):
-    pass
+
+    RGB_matrix = [0, 0, 0]
+    RGB_matrix[0] = round(np.average(R_matrix))
+    RGB_matrix[1] = round(np.average(G_matrix))
+    RGB_matrix[2] = round(np.average(B_matrix))
+
+    return RGB_matrix
