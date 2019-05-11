@@ -60,7 +60,7 @@ In max pooling we picking up the max number from the Pooling box in this case it
         return RGB_matrix
 
 # Result : 
-![Max Pooling Result](https://github.com/shalayiding/ImagePooling/blob/master/max_value.png)
+![Max Pooling Result](https://github.com/shalayiding/ImagePooling/blob/master/result_img/max_value.png)
 
 ## 2.Average Poolling 👍 
 In the Average poolling we are adding all the pixels and divide by the matrix size.
@@ -75,7 +75,7 @@ In the Average poolling we are adding all the pixels and divide by the matrix si
         return RGB_matrix
 
 
-# Result : ![Average image pooling](https://github.com/shalayiding/ImagePooling/blob/master/average_value.png)
+# Result : ![Average image pooling](https://github.com/shalayiding/ImagePooling/blob/master/result_img/average_value.png)
 
 ## 3. Max Eigen value Poolling 👍 
 we are looking for the max eigen value of the matrix.
@@ -90,7 +90,7 @@ we are looking for the max eigen value of the matrix.
         RGB_matrix[2] = round(max(B_e_vals))
         return RGB_matrix
 
-# Result : ![Eigen image pooling](https://github.com/shalayiding/ImagePooling/blob/master/max_eigen_value.png)
+# Result : ![Eigen image pooling](https://github.com/shalayiding/ImagePooling/blob/master/result_img/max_eigen_value.png)
 
 
 
