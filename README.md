@@ -120,9 +120,6 @@ and we are looking for the eigen value of this 4*4 matrix.
             R_matrix_abso.append(s)
     
         return R_matrix_abso
-
-# Result : ![Relation_Eigen image pooling](https://github.com/shalayiding/ImagePooling/blob/master/result_img/relation_eigen_value.png)
-## If we take the secound eigen value of the matrix it look like.
 # Result : ![Relation_Eigen image pooling_secound](https://github.com/shalayiding/ImagePooling/blob/master/result_img/relation_eigen_value_secound.png)
 
 
